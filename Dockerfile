@@ -1,19 +1,19 @@
 FROM centos:6
-MAINTAINER yifeng.huang@outlook.com
 
-RUN export http_proxy="http://proxy.houston.hpecorp.net:8080"
-RUN export https_proxy="http://proxy.houston.hpecorp.net:8080"
+MAINTAINER nimmis <kjell.havneskold@gmail.com>
 
-ADD test.sh /
+RUN yum update -y && \
+yum install -y wget && \
+wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/7u80-b15/jre-7u80-linux-x64.rpm" && \
+yum localinstall -y /jre-7u80-linux-x64.rpm && \
+rm -f /jre-7u80-linux-x64.rpm && \
+yum clean all
 
-# RUN yum -y update
-# RUN echo "We are fine!"
+# Set environment variables.
+ENV HOME /root
 
-# EXPOSE 80
-# EXPOSE 8080
-# EXPOSE 5433
-# EXPOSE 6400
-# EXPOSE 20084
-# EXPOSE 8443
+# Define working directory.
+WORKDIR /root
 
-CMD ["/bin/bash", "/test.sh"] 
+# Define default command.
+CMD ["bash"]
