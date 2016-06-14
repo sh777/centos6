@@ -1,6 +1,9 @@
 FROM centos:6
 
-MAINTAINER nimmis <kjell.havneskold@gmail.com>
+MAINTAINER .
+
+export http_proxy="http://proxy.houston.hpecorp.net:8080"
+export https_proxy="http://proxy.houston.hpecorp.net:8080"
 
 RUN yum update -y && \
 yum install -y wget && \
