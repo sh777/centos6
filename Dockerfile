@@ -1,4 +1,4 @@
-FROM centos:centos6
+FROM centos:6
 MAINTAINER yifeng.huang@outlook.com
 
 RUN export http_proxy="http://proxy.houston.hpecorp.net:8080"
