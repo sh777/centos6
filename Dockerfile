@@ -18,5 +18,7 @@ ENV HOME /root
 # Define working directory.
 WORKDIR /root
 
+EXPOSE 8080 5433 6400 20084 8443 
+
 # Define default command.
 CMD ["bash"]
