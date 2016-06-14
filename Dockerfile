@@ -6,4 +6,4 @@ RUN echo "We are fine!"
 
 EXPOSE 80
 
-CMD [ "sudo /bin/bash" ]
+CMD [ "/bin/bash" ]
