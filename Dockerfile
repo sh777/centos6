@@ -14,4 +14,4 @@ EXPOSE 6400
 EXPOSE 20084
 EXPOSE 8443
 
-CMD [ "/bin/bash" ]
+CMD ["/bin/bash", "/test.sh"] 
