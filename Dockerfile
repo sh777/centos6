@@ -2,8 +2,8 @@ FROM centos:6
 
 MAINTAINER .
 
-EXPORT http_proxy="http://proxy.houston.hpecorp.net:8080"
-EXPORT https_proxy="http://proxy.houston.hpecorp.net:8080"
+ENV http_proxy "http://proxy.houston.hpecorp.net:8080"
+ENV https_proxy "http://proxy.houston.hpecorp.net:8080"
 
 RUN yum update -y && \
 yum install -y wget && \
